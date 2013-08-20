@@ -1,4 +1,4 @@
-script "install_something" do
+script "install pip and mongoctl" do
 	interpreter "bash"
 	user "root"
 	cwd "/tmp"

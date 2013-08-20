@@ -48,6 +48,7 @@ Schedule is set through custom JSON:
 * BACKUP_SCHEDULE_HOUR - which our to run the tool
 * BACKUP_SCHEDULE_MINUTE - which minute to run the tool
 * BACKUP_SCHEDULE_WEEKDAY - which day of the week to run the tool
+Default is: run backup every saturday at 1AM
 
 Custom Chef cookbook JSON example:
 ```json

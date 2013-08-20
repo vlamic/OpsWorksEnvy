@@ -58,6 +58,5 @@ Custom Chef cookbook JSON example:
     "BACKUP_SRC_DB": "mongodb://my_super_production_database",
     "BACKUP_DST_DB": "mongodb://my_not_as_super_development_database"
   }
-}}
 }
 ```

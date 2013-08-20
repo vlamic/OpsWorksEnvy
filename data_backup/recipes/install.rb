@@ -3,8 +3,8 @@ script "install_something" do
 	user "root"
 	cwd "/tmp"
 	code <<-EOH
-		curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
-		sudo python get-pip.py
+		curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py &&
+		sudo python get-pip.py &&
 		sudo pip install mongoctl
 	EOH
 end

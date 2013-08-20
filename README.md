@@ -1,6 +1,8 @@
 OpsWorksEnvy
 ==================
 
+### environment_variables
+
 Set environment variables for your environment and Node.js OpsWorks project.
 
 You can do 2 things:
@@ -31,3 +33,31 @@ E.g.
 
 In JSON above first "environment_variables" sets environment variables for machine (user root).
 The section "environment_variables" under "deploy" specifying environment variables for Node.js process which will be hit with "monit restart app_name".
+
+### data_backup
+
+The utility to run backup on the certain interval. Currently supports MongoDB only. Data is being written from one database to another. Example scenario: data from production database is copied to development database every week.
+
+Options are set through environment variables.
+Available options:
+* BACKUP_SCHEDULE_HOUR - which our to run the tool
+* BACKUP_SCHEDULE_MINUTE - which minute to run the tool
+* BACKUP_SCHEDULE_WEEKDAY - which day of the week to run the tool
+* BACKUP_COLLECTIONS - space separated list of collections to backupo
+* BACKUP_SRC_DB - connection string for MongoDB SOURCE database
+* BACKUP_DST_DB - connection string for MongoDB DESTINATION database 
+
+Custom Chef cookbook JSON example:
+```json
+{
+  "environment_variables": {
+    "BACKUP_SCHEDULE_HOUR": 16,
+    "BACKUP_SCHEDULE_MINUTE": 0,
+    "BACKUP_SCHEDULE_WEEKDAY": 2,
+    "BACKUP_COLLECTIONS": "users shops streets",
+    "BACKUP_SRC_DB": "mongodb://my_super_production_database",
+    "BACKUP_DST_DB": "mongodb://my_not_as_super_development_database"
+  }
+}}
+}
+```

@@ -1,4 +1,4 @@
-cron "puzzle data backup" do
+cron "data backup" do
   hour "16"
   minute "30"
   weekday "2"

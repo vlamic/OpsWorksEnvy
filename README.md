@@ -53,15 +53,15 @@ Default is: run backup every saturday at 1AM
 Custom Chef cookbook JSON example:
 ```json
 {
-"data_backup": {
-    "BACKUP_SCHEDULE_HOUR": 16,
-    "BACKUP_SCHEDULE_MINUTE": 0,
-    "BACKUP_SCHEDULE_WEEKDAY": 2
-  },
-  "environment_variables": {
-    "BACKUP_COLLECTIONS": "users shops streets",
-    "BACKUP_SRC_DB": "mongodb://my_super_production_database",
-    "BACKUP_DST_DB": "mongodb://my_not_as_super_development_database"
-  }
+	"data_backup": {
+		"BACKUP_SCHEDULE_HOUR": "16",
+		"BACKUP_SCHEDULE_MINUTE": "0",
+		"BACKUP_SCHEDULE_WEEKDAY": "2"
+	},
+	"environment_variables": {
+		"BACKUP_COLLECTIONS": "users shops streets",
+		"BACKUP_SRC_DB": "mongodb://my_super_production_database",
+		"BACKUP_DST_DB": "mongodb://my_not_as_super_development_database"
+	}
 }
 ```

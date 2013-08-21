@@ -3,8 +3,7 @@ script "install pip and mongoctl" do
 	user "root"
 	cwd "/tmp"
 	code <<-EOH
-		curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py &&
-		sudo python get-pip.py &&
+		sudo apt-get install python-pip -y
 		sudo pip install mongoctl
 	EOH
 end

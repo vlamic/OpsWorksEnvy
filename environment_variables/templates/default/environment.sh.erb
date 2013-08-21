@@ -3,5 +3,3 @@
 <% node[:environment_variables].each do |name,value| -%>
 export <%= name %>=<%= value %>
 <% end -%>
-
-npm config set <% node[:environment_variables]["NODE_ENV"] %> true

@@ -3,8 +3,7 @@ script "install pip and mongoctl" do
 	user "root"
 	cwd "/tmp"
 	code <<-EOH
-		sudo apt-get install python-pip -y &&
-		sudo pip install mongoctl &&
-		sudo mongoctl install
+		pip install mongoctl
+		mongoctl install-mongodb
 	EOH
 end

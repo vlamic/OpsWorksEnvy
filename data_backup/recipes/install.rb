@@ -5,6 +5,6 @@ script "install pip and mongoctl" do
 	code <<-EOH
 		sudo apt-get install python-pip -y &&
 		sudo pip install mongoctl &&
-		mongoctl install
+		sudo mongoctl install
 	EOH
 end

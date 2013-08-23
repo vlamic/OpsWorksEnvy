@@ -1,1 +1,1 @@
-default["environment_variables"]["NODE_ENV"] = "production"
+default[:environment_variables]["NODE_ENV"] = "production"

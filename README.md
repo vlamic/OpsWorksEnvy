@@ -42,9 +42,10 @@ Database options are set through environment variables.
 Available options:
 * BACKUP_TMP_PATH - the temporary location on the disk where backup will be performed
 * BACKUP_SRC_DB_NAME - the name of the source database
+* BACKUP_DST_DB_NAME - the name of the source database
 * BACKUP_COLLECTIONS - space separated list of collections to backupo
-* BACKUP_SRC_DB - connection string for MongoDB SOURCE database
-* BACKUP_DST_DB - connection string for MongoDB DESTINATION database 
+* BACKUP_SRC_HOST - connection string for MongoDB SOURCE host
+* BACKUP_DST_HOST - connection string for MongoDB DESTINATION host 
 
 Schedule is set through custom JSON:
 * BACKUP_SCHEDULE_HOUR - which our to run the tool
@@ -63,9 +64,10 @@ Custom Chef cookbook JSON example:
 	"environment_variables": {
 		"BACKUP_TMP_PATH": "/tmp/dump",
 		"BACKUP_SRC_DB_NAME": "my_mega_database",
+		"BACKUP_DST_DB_NAME": "my_dev_database",
 		"BACKUP_COLLECTIONS": "users shops streets",
-		"BACKUP_SRC_DB": "mongodb://my_super_production_database/my_mega_database",
-		"BACKUP_DST_DB": "mongodb://my_not_as_super_development_database"
+		"BACKUP_SRC_HOST": "mongodb://my_super_production_database",
+		"BACKUP_DST_HOST": "mongodb://my_not_as_super_development_database"
 	}
 }
 ```
